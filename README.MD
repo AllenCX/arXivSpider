@@ -4,5 +4,5 @@ Prerequisite packages:
   Python3
   Scrapy
   
-Installation:\n
+Installation:
   git clone https://github.com/AllenCX/axspider.git; cd axspider; scrapy crawl axpider
