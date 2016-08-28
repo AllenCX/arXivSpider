@@ -8,10 +8,13 @@
 import scrapy
 
 
-class AxspiderItem(scrapy.Item):
+class Articles(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    authors = scrapy.Field()
+    abstract = scrapy.Field()
+    url = scrapy.Field()
 
 class DmozItem(scrapy.Item):
     title = scrapy.Field()

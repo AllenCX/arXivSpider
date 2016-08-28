@@ -3,14 +3,22 @@ import scrapy
 class axspider(scrapy.Spider):
 	name = 'axspider'
 	allowed_domains = ['arxiv.org']
-	start_urls = ['http://arxiv.org/list/cs.CL/recent']
+	start_urls = [
+				'http://arxiv.org/list/cs.CL/recent',
+				#'https://arxiv.org/list/cs.LG/recent'
+				]
+
+	def __init__(self):
+		self.article_num_today = 0
 
 	def parse(self, response):
 		article_num_today = response.xpath('//ul[1]/li[2]/a/@href').extract()
-		article_num_today = int(article_num_today[0][-1])
-		print(article_num_today)
+		article_num_today = int(article_num_today[0][article_num_today[0].find('m')+1:]) - 1
+		self.article_num_today = article_num_today
+		print("There are {0} articles published today!".format(article_num_today))
 		#find the articles' url
-		for i in range(article_num_today):
+		#for i in range(article_num_today):
+		for i in range(0):
 			article_xpath_tmp = "//a[@name = 'item{0}']/parent::*//a/@href".format(i+1)
 			abs_url = "http://arxiv.org" + response.xpath(article_xpath_tmp)[0].extract()
 			yield scrapy.Request(abs_url, callback=self.parse_articles)
