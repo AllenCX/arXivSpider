@@ -5,11 +5,12 @@ class axspider(scrapy.Spider):
 	allowed_domains = ['arxiv.org']
 	start_urls = [
 				'http://arxiv.org/list/cs.CL/recent',
-				#'https://arxiv.org/list/cs.LG/recent'
+				'https://arxiv.org/list/cs.LG/recent'
 				]
 
 	def __init__(self):
 		self.article_num_today = 0
+		self.sec_subject = ""
 
 	def parse(self, response):
 		article_num_today = response.xpath('//ul[1]/li[2]/a/@href').extract()
@@ -17,12 +18,16 @@ class axspider(scrapy.Spider):
 		self.article_num_today = article_num_today
 		print("There are {0} articles published today!".format(article_num_today))
 		#find the articles' url
-		#for i in range(article_num_today):
-		for i in range(0):
+		for i in range(article_num_today):
+		#for i in range(2):
 			article_xpath_tmp = "//a[@name = 'item{0}']/parent::*//a/@href".format(i+1)
 			abs_url = "http://arxiv.org" + response.xpath(article_xpath_tmp)[0].extract()
-			yield scrapy.Request(abs_url, callback=self.parse_articles)
+			self.sec_subject = response.url.split('/')[-2]
+			request = scrapy.Request(abs_url, callback=self.parse_articles)
+			request.meta["num"] = i + 1
+			yield request
 			#print(scrapy.Request(abs_url, callback=self.parse_articles))
+
 	def parse_articles(self, response):
 		#print(response.url)
 		#print("="*10)
@@ -43,6 +48,8 @@ class axspider(scrapy.Spider):
 		abstract = abstract.replace("\n", " ").strip()
 
 		yield {
+			'num' : response.meta["num"],
+			'sec_subject':self.sec_subject,
 			'title':title,
 			'authors':authors,
 			'abstract':abstract,

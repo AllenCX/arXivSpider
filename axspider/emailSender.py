@@ -5,17 +5,28 @@ import socket
 import re, subprocess
 from threading import Timer
 import sched,time
+import json
 
-MAIL_HOST = "smtp.163.com"
+'''MAIL_HOST = "smtp.163.com"
 MAIL_USER = 'gdga51'
 MAIL_PWD = '135asdfghjkl'
-MAIL_POSTFIX = "163.com"
+MAIL_POSTFIX = "163.com"'''
 
 # In[25]:
 
-def send_mail(to_list, sub, content):
+def send_mail(to_list, sub, content, _subtype='plain'):
+
+    #Load the settings, see mail_settings.json
+    with open("axspider/email_settings.json", 'r') as f:
+        mail_settings = json.load(f)
+    
+    MAIL_HOST = mail_settings["MAIL_HOST"]
+    MAIL_USER = mail_settings["MAIL_USER"]
+    MAIL_PWD = mail_settings["MAIL_PWD"]
+    MAIL_POSTFIX = mail_settings["MAIL_POSTFIX"]
+
     me = MAIL_USER + '@' + MAIL_POSTFIX
-    msg = MIMEText(content, _subtype='plain')
+    msg = MIMEText(content, _subtype)
     msg['Subject'] = sub
     msg['From'] = me
     msg['To'] = ';'.join(to_list)

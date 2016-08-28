@@ -54,9 +54,11 @@ ROBOTSTXT_OBEY = False
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
 	'scrapy.downloadermiddlewares.retry.RetryMiddleware': 888,
+	#'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware':600
 }
 RETRY_ENABLED = True
 RETRY_TIMES = 30
+
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
