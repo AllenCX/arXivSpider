@@ -34,7 +34,11 @@ class AxspiderPipeline(object):
 			string, the email's body content.
 		'''
 		article_dict = dict(item)
+		print("+"*80)
 		print(article_dict["sec_subject"])
+		print(article_dict["order_index"])
+		print(article_dict["num"])
+		print("+"*80)
 		tmp_str = ("<h2>[{5}]{1}</h2>"
 					"<p style='font-size:120%; line-height:120%'>"
 					"<b>url:</b>{4}<br>"
@@ -59,7 +63,8 @@ class AxspiderPipeline(object):
 
 		tmp_dict = dict(item)
 		#without encode(), there will be an error...
-		order_index = ord(tmp_dict["sec_subject"][-2])*10 + ord(tmp_dict["sec_subject"][-1]) + tmp_dict["num"]
+		order_index = ord(tmp_dict["sec_subject"][-2])*100 + ord(tmp_dict["sec_subject"][-1])*10 + int(tmp_dict["num"])
+		print(order_index)
 		self.msg_dict[order_index] = self.assemble_msg(item)
 		line = line.encode()
 		self.file.write(line)
@@ -79,6 +84,7 @@ class AxspiderPipeline(object):
 		send_mail(self.to_list, self.subject, self.msg, 'html')
 		print("="*80)
 		print("Now the spider ends!")
+		print(sortedkeys)
 		print("="*80)
 		#self.mailer.send(to=self.TO, subject=self.subject, body=self.body)
 		self.file.close()

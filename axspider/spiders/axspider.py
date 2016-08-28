@@ -19,12 +19,14 @@ class axspider(scrapy.Spider):
 		print("There are {0} articles published today!".format(article_num_today))
 		#find the articles' url
 		for i in range(article_num_today):
-		#for i in range(2):
+		#or i in range(2):
 			article_xpath_tmp = "//a[@name = 'item{0}']/parent::*//a/@href".format(i+1)
 			abs_url = "http://arxiv.org" + response.xpath(article_xpath_tmp)[0].extract()
 			self.sec_subject = response.url.split('/')[-2]
 			request = scrapy.Request(abs_url, callback=self.parse_articles)
 			request.meta["num"] = i + 1
+			request.meta["order_index"] = ord(self.sec_subject[-2]) * 100 + ord(self.sec_subject[-1]) * 10 + i + 1
+			request.meta['sec_subject'] = response.url.split('/')[-2]
 			yield request
 			#print(scrapy.Request(abs_url, callback=self.parse_articles))
 
@@ -36,6 +38,7 @@ class axspider(scrapy.Spider):
 		title = response.xpath("//title/text()").extract()[0]
 		title = " ".join(title.split())
 		
+		sec_subject = response.xpath("//div[@class='current']/text()").extract()[0]
 		#return a list of authors
 		authors = response.xpath("//div[@class='authors']//a/text()").extract()
 		#type(authors) == list
@@ -54,4 +57,5 @@ class axspider(scrapy.Spider):
 			'authors':authors,
 			'abstract':abstract,
 			'url':article_url,
+			'order_index': response.meta["order_index"]
 		}
