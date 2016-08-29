@@ -1,0 +1,335 @@
+2016-08-29 07:58:15 [scrapy] INFO: Scrapy 1.1.2 started (bot: axspider)
+2016-08-29 07:58:15 [scrapy] INFO: Overridden settings: {'RETRY_TIMES': 30, 'NEWSPIDER_MODULE': 'axspider.spiders', 'SPIDER_MODULES': ['axspider.spiders'], 'LOG_FILE': 'axlog.log', 'BOT_NAME': 'axspider'}
+2016-08-29 07:58:15 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats', 'scrapy.extensions.corestats.CoreStats']
+2016-08-29 07:58:15 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware']
+2016-08-29 07:58:15 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-08-29 07:58:15 [scrapy] INFO: Enabled item pipelines:
+['axspider.pipelines.AxspiderPipeline']
+2016-08-29 07:58:15 [scrapy] INFO: Spider opened
+2016-08-29 07:58:15 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-08-29 07:58:36 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/list/cs.CL/recent> (referer: None)
+2016-08-29 07:58:46 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07187> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 07:58:46 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07187> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 55, in parse_articles
+    'sec_subject':request.meta['sec_subject'],
+NameError: name 'request' is not defined
+2016-08-29 07:58:55 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07094> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 07:58:55 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07094> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 55, in parse_articles
+    'sec_subject':request.meta['sec_subject'],
+NameError: name 'request' is not defined
+2016-08-29 07:58:56 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07076> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 07:58:56 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07076> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 55, in parse_articles
+    'sec_subject':request.meta['sec_subject'],
+NameError: name 'request' is not defined
+2016-08-29 07:59:11 [scrapy] INFO: Scrapy 1.1.2 started (bot: axspider)
+2016-08-29 07:59:11 [scrapy] INFO: Overridden settings: {'LOG_FILE': 'axlog.log', 'BOT_NAME': 'axspider', 'NEWSPIDER_MODULE': 'axspider.spiders', 'RETRY_TIMES': 30, 'SPIDER_MODULES': ['axspider.spiders']}
+2016-08-29 07:59:11 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats', 'scrapy.extensions.corestats.CoreStats']
+2016-08-29 07:59:11 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware']
+2016-08-29 07:59:11 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-08-29 07:59:11 [scrapy] INFO: Enabled item pipelines:
+['axspider.pipelines.AxspiderPipeline']
+2016-08-29 07:59:11 [scrapy] INFO: Spider opened
+2016-08-29 07:59:11 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-08-29 07:59:21 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/list/cs.CL/recent> (referer: None)
+2016-08-29 07:59:24 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07253> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 07:59:24 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07253> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 55, in parse_articles
+    'sec_subject':request.meta['sec_subject'],
+NameError: name 'request' is not defined
+2016-08-29 07:59:24 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07076> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 07:59:25 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07076> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 55, in parse_articles
+    'sec_subject':request.meta['sec_subject'],
+NameError: name 'request' is not defined
+2016-08-29 07:59:39 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07094> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 07:59:39 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07094> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 55, in parse_articles
+    'sec_subject':request.meta['sec_subject'],
+NameError: name 'request' is not defined
+2016-08-29 08:00:11 [scrapy] INFO: Crawled 4 pages (at 4 pages/min), scraped 0 items (at 0 items/min)
+2016-08-29 08:01:40 [scrapy] INFO: Scrapy 1.1.2 started (bot: axspider)
+2016-08-29 08:01:40 [scrapy] INFO: Overridden settings: {'LOG_FILE': 'axlog.log', 'BOT_NAME': 'axspider', 'SPIDER_MODULES': ['axspider.spiders'], 'RETRY_TIMES': 30, 'NEWSPIDER_MODULE': 'axspider.spiders'}
+2016-08-29 08:01:40 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats', 'scrapy.extensions.corestats.CoreStats']
+2016-08-29 08:01:40 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware']
+2016-08-29 08:01:40 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-08-29 08:01:40 [scrapy] INFO: Enabled item pipelines:
+['axspider.pipelines.AxspiderPipeline']
+2016-08-29 08:01:40 [scrapy] INFO: Spider opened
+2016-08-29 08:01:40 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-08-29 08:02:19 [scrapy] INFO: Scrapy 1.1.2 started (bot: axspider)
+2016-08-29 08:02:19 [scrapy] INFO: Overridden settings: {'LOG_FILE': 'axlog.log', 'NEWSPIDER_MODULE': 'axspider.spiders', 'SPIDER_MODULES': ['axspider.spiders'], 'BOT_NAME': 'axspider', 'RETRY_TIMES': 30}
+2016-08-29 08:02:19 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats', 'scrapy.extensions.corestats.CoreStats']
+2016-08-29 08:02:19 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware']
+2016-08-29 08:02:19 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-08-29 08:02:19 [scrapy] INFO: Enabled item pipelines:
+['axspider.pipelines.AxspiderPipeline']
+2016-08-29 08:02:19 [scrapy] INFO: Spider opened
+2016-08-29 08:02:19 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-08-29 08:02:22 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/list/cs.CL/recent> (referer: None)
+2016-08-29 08:02:24 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07115> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 08:02:25 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07115> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:02:26 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07253> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 08:02:26 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07253> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:02:31 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07094> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 08:02:31 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07094> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:02:40 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07076> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 08:02:40 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07076> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:02:52 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07187> (referer: http://arxiv.org/list/cs.CL/recent)
+2016-08-29 08:02:52 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07187> (referer: http://arxiv.org/list/cs.CL/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:03:19 [scrapy] INFO: Crawled 6 pages (at 6 pages/min), scraped 0 items (at 0 items/min)
+2016-08-29 08:03:22 [scrapy] DEBUG: Crawled (200) <GET https://arxiv.org/list/cs.LG/recent> (referer: None)
+2016-08-29 08:03:22 [scrapy] DEBUG: Filtered duplicate request: <GET http://arxiv.org/abs/1608.07187> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2016-08-29 08:03:25 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07019> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-29 08:03:25 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07019> (referer: https://arxiv.org/list/cs.LG/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:03:29 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07179> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-29 08:03:29 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07179> (referer: https://arxiv.org/list/cs.LG/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'
+2016-08-29 08:03:34 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07251> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-29 08:03:34 [scrapy] ERROR: Spider error processing <GET http://arxiv.org/abs/1608.07251> (referer: https://arxiv.org/list/cs.LG/recent)
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/cai/sandbox/axspider/axspider/spiders/axspider.py", line 61, in parse_articles
+    'order_index': response.meta["order_index"]
+KeyError: 'order_index'

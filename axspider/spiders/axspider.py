@@ -10,22 +10,25 @@ class axspider(scrapy.Spider):
 
 	def __init__(self):
 		self.article_num_today = 0
-		self.sec_subject = ""
+		self.sec_subject_list = list()
 
 	def parse(self, response):
 		article_num_today = response.xpath('//ul[1]/li[2]/a/@href').extract()
 		article_num_today = int(article_num_today[0][article_num_today[0].find('m')+1:]) - 1
 		self.article_num_today = article_num_today
 		print("There are {0} articles published today!".format(article_num_today))
+		print("processing " + response.url)
 		#find the articles' url
 		for i in range(article_num_today):
 		#or i in range(2):
 			article_xpath_tmp = "//a[@name = 'item{0}']/parent::*//a/@href".format(i+1)
 			abs_url = "http://arxiv.org" + response.xpath(article_xpath_tmp)[0].extract()
-			self.sec_subject = response.url.split('/')[-2]
+			sec_subject = response.url.split('/')[-2]
+			if sec_subject not in self.sec_subject_list:
+				self.sec_subject_list.append(sec_subject)
 			request = scrapy.Request(abs_url, callback=self.parse_articles)
 			request.meta["num"] = i + 1
-			request.meta["order_index"] = ord(self.sec_subject[-2]) * 100 + ord(self.sec_subject[-1]) * 10 + i + 1
+			request.meta["order_index"] = ord(sec_subject[-2]) * 100 + ord(sec_subject[-1]) * 10 + i + 1
 			request.meta['sec_subject'] = response.url.split('/')[-2]
 			yield request
 			#print(scrapy.Request(abs_url, callback=self.parse_articles))
@@ -52,7 +55,7 @@ class axspider(scrapy.Spider):
 
 		yield {
 			'num' : response.meta["num"],
-			'sec_subject':self.sec_subject,
+			'sec_subject':response.meta['sec_subject'],
 			'title':title,
 			'authors':authors,
 			'abstract':abstract,

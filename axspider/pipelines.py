@@ -12,7 +12,7 @@ import time
 class AxspiderPipeline(object):
 	def __init__(self):
 		self.send_time = time.strftime("%Y%m%d", time.localtime())
-
+		self.sec_subject_list = list()
 		self.file = open('axPipeline.json', 'wb+')
 		self.msg = ("Here are the articles published on arXiv today!<br>"
 				+ "="*80 + '<br>')
@@ -36,6 +36,7 @@ class AxspiderPipeline(object):
 		article_dict = dict(item)
 		print("+"*80)
 		print(article_dict["sec_subject"])
+		print(article_dict["title"])
 		print(article_dict["order_index"])
 		print(article_dict["num"])
 		print("+"*80)
@@ -64,6 +65,10 @@ class AxspiderPipeline(object):
 		tmp_dict = dict(item)
 		#without encode(), there will be an error...
 		order_index = ord(tmp_dict["sec_subject"][-2])*100 + ord(tmp_dict["sec_subject"][-1])*10 + int(tmp_dict["num"])
+		
+		if tmp_dict["sec_subject"] not in self.sec_subject_list:
+			self.sec_subject_list.append(tmp_dict["sec_subject"])
+
 		print(order_index)
 		self.msg_dict[order_index] = self.assemble_msg(item)
 		line = line.encode()
@@ -74,14 +79,18 @@ class AxspiderPipeline(object):
 		return item
 
 	def close_spider(self, spider):
-
+		self.msg = ("Here are the articles published on arXiv today!<br>"
+				+ "subject:{0}".format(self.sec_subject_list) + "<br>"
+				+ "="*80 + '<br>')
+		self.subject = ("[{0}] {1} new articles on arXiv.org!").format(self.send_time,self.total_num)
+		
 		#Because scrapy concurrently process items, so we have to sort the message
 		sortedkeys = sorted(self.msg_dict.keys())
 		for i in sortedkeys:
 			self.msg +=  self.msg_dict[i]
 		print(sortedkeys)
-		self.subject = ("[{0}] {1} new articles on arXiv.org!").format(self.send_time,self.total_num)
 		send_mail(self.to_list, self.subject, self.msg, 'html')
+
 		print("="*80)
 		print("Now the spider ends!")
 		print(sortedkeys)

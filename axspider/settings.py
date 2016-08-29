@@ -92,7 +92,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-MAIL_FROM = "gdga51@163.com"
-MAIL_HOST = "smtp.163.com"
-MAIL_USER = "gdga51"
-MAIL_PASS = "135asdfghjkl"
+DUPEFILTER_DEBU = True
