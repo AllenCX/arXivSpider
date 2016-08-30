@@ -7,11 +7,6 @@ from threading import Timer
 import sched,time
 import json
 
-'''MAIL_HOST = "smtp.163.com"
-MAIL_USER = 'gdga51'
-MAIL_PWD = '135asdfghjkl'
-MAIL_POSTFIX = "163.com"'''
-
 # In[25]:
 
 def send_mail(to_list, sub, content, _subtype='plain'):
