@@ -1,0 +1,123 @@
+2016-08-30 01:08:47 [scrapy] INFO: Scrapy 1.1.2 started (bot: axspider)
+2016-08-30 01:08:47 [scrapy] INFO: Overridden settings: {'LOG_FILE': 'ax.log', 'SPIDER_MODULES': ['axspider.spiders'], 'RETRY_TIMES': 30, 'BOT_NAME': 'axspider', 'NEWSPIDER_MODULE': 'axspider.spiders'}
+2016-08-30 01:08:47 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats', 'scrapy.extensions.corestats.CoreStats']
+2016-08-30 01:08:47 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware']
+2016-08-30 01:08:47 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-08-30 01:08:47 [scrapy] INFO: Enabled item pipelines:
+['axspider.pipelines.AxspiderPipeline']
+2016-08-30 01:08:47 [scrapy] INFO: Spider opened
+2016-08-30 01:08:47 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-08-30 01:09:05 [scrapy] DEBUG: Crawled (200) <GET https://arxiv.org/list/cs.CL/recent> (referer: None)
+2016-08-30 01:09:07 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07076> (referer: https://arxiv.org/list/cs.CL/recent)
+2016-08-30 01:09:08 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07076>
+{'title': '[1608.07076] A Context-aware Natural Language Generator for Dialogue Systems', 'num': 2, 'order_index': 7462, 'abstract': "We present a novel natural language generation system for spoken dialogue systems capable of entraining (adapting) to users' way of speaking, providing contextually appropriate responses. The generator is based on recurrent neural networks and the sequence-to-sequence approach. It is fully trainable from data which include preceding context along with responses to be generated. We show that the context-aware generator yields significant improvements over the baseline in both automatic metrics and a human pairwise preference test.", 'url': 'http://arxiv.org/abs/1608.07076', 'sec_subject': 'cs.CL', 'authors': ['Ondřej Dušek', 'Filip Jurčíček']}
+2016-08-30 01:09:10 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07187> (referer: https://arxiv.org/list/cs.CL/recent)
+2016-08-30 01:09:10 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07187>
+{'title': '[1608.07187] Semantics derived automatically from language corpora necessarily contain human biases', 'num': 4, 'order_index': 7464, 'abstract': 'Artificial intelligence and machine learning are in a period of astounding growth. However, there are concerns that these technologies may be used, either with or without intention, to perpetuate the prejudice and unfairness that unfortunately characterizes many human institutions. Here we show for the first time that human-like semantic biases result from the application of standard machine learning to ordinary language---the same sort of language humans are exposed to every day. We replicate a spectrum of standard human biases as exposed by the Implicit Association Test and other well-known psychological studies. We replicate these using a widely used, purely statistical machine-learning model---namely, the GloVe word embedding---trained on a corpus of text from the Web. Our results indicate that language itself contains recoverable and accurate imprints of our historic biases, whether these are morally neutral as towards insects or flowers, problematic as towards race or gender, or even simply veridical, reflecting the status quo for the distribution of gender with respect to careers or first names. These regularities are captured by machine learning along with the rest of semantics. In addition to our empirical findings concerning language, we also contribute new methods for evaluating bias in text, the Word Embedding Association Test (WEAT) and the Word Embedding Factual Association Test (WEFAT). Our results have implications not only for AI and machine learning, but also for the fields of psychology, sociology, and human ethics, since they raise the possibility that mere exposure to everyday language can account for the biases we replicate here.', 'url': 'http://arxiv.org/abs/1608.07187', 'sec_subject': 'cs.CL', 'authors': ['Aylin Caliskan-Islam', 'Joanna J. Bryson', 'Arvind Narayanan']}
+2016-08-30 01:09:10 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07094> (referer: https://arxiv.org/list/cs.CL/recent)
+2016-08-30 01:09:10 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07094>
+{'title': '[1608.07094] A Novel Term_Class Relevance Measure for Text Categorization', 'num': 5, 'order_index': 7465, 'abstract': 'In this paper, we introduce a new measure called Term_Class relevance to compute the relevancy of a term in classifying a document into a particular class. The proposed measure estimates the degree of relevance of a given term, in placing an unlabeled document to be a member of a known class, as a product of Class_Term weight and Class_Term density; where the Class_Term weight is the ratio of the number of documents of the class containing the term to the total number of documents containing the term and the Class_Term density is the relative density of occurrence of the term in the class to the total occurrence of the term in the entire population. Unlike the other existing term weighting schemes such as TF-IDF and its variants, the proposed relevance measure takes into account the degree of relative participation of the term across all documents of the class to the entire population. To demonstrate the significance of the proposed measure experimentation has been conducted on the 20 Newsgroups dataset. Further, the superiority of the novel measure is brought out through a comparative analysis.', 'url': 'http://arxiv.org/abs/1608.07094', 'sec_subject': 'cs.CL', 'authors': ['D S Guru', 'Mahamad Suhil']}
+2016-08-30 01:09:11 [scrapy] DEBUG: Crawled (200) <GET https://arxiv.org/list/cs.LG/recent> (referer: None)
+2016-08-30 01:09:13 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07253> (referer: https://arxiv.org/list/cs.CL/recent)
+2016-08-30 01:09:13 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07253>
+{'title': '[1608.07253] Learning Latent Vector Spaces for Product Search', 'num': 3, 'order_index': 7463, 'abstract': 'We introduce a novel latent vector space model that jointly learns the latent representations of words, e-commerce products and a mapping between the two without the need for explicit annotations. The power of the model lies in its ability to directly model the discriminative relation between products and a particular word. We compare our method to existing latent vector space models (LSI, LDA and word2vec) and evaluate it as a feature in a learning to rank setting. Our latent vector space model achieves its enhanced performance as it learns better product representations. Furthermore, the mapping from words to products and the representations of words benefit directly from the errors propagated back from the product representations during parameter estimation. We provide an in-depth analysis of the performance of our model and analyze the structure of the learned representations.', 'url': 'http://arxiv.org/abs/1608.07253', 'sec_subject': 'cs.CL', 'authors': ['Christophe Van Gysel', 'Maarten de Rijke', 'Evangelos Kanoulas']}
+2016-08-30 01:09:14 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07441> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-30 01:09:14 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07441>
+{'title': '[1608.07441] Hard Negative Mining for Metric Learning Based Zero-Shot Classification', 'num': 3, 'order_index': 8313, 'abstract': 'Zero-Shot learning has been shown to be an efficient strategy for domain adaptation. In this context, this paper builds on the recent work of Bucher et al. [1], which proposed an approach to solve Zero-Shot classification problems (ZSC) by introducing a novel metric learning based objective function. This objective function allows to learn an optimal embedding of the attributes jointly with a measure of similarity between images and attributes. This paper extends their approach by proposing several schemes to control the generation of the negative pairs, resulting in a significant improvement of the performance and giving above state-of-the-art results on three challenging ZSC datasets.', 'url': 'http://arxiv.org/abs/1608.07441', 'sec_subject': 'cs.LG', 'authors': ['Maxime Bucher', 'Stéphane Herbin', 'Frédéric Jurie']}
+2016-08-30 01:09:15 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07400> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-30 01:09:15 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07400>
+{'title': '[1608.07400] Collaborative Filtering with Recurrent Neural Networks', 'num': 5, 'order_index': 8315, 'abstract': 'We show that collaborative filtering can be viewed as a sequence prediction problem, and that given this interpretation, recurrent neural networks offer very competitive approach. In particular we study how the long short-term memory (LSTM) can be applied to collaborative filtering, and how it compares to standard nearest neighbors and matrix factorization methods on movie recommendation. We show that the LSTM is competitive in all aspects, and largely outperforms other methods in terms of item coverage and short term predictions.', 'url': 'http://arxiv.org/abs/1608.07400', 'sec_subject': 'cs.LG', 'authors': ['Robin Devooght', 'Hugues Bersini']}
+2016-08-30 01:09:16 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07536> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-30 01:09:16 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07536>
+{'title': '[1608.07536] Leveraging over intact priors for boosting control and dexterity of prosthetic hands by amputees', 'num': 1, 'order_index': 8311, 'abstract': 'Non-invasive myoelectric prostheses require a long training time to obtain satisfactory control dexterity. These training times could possibly be reduced by leveraging over training efforts by previous subjects. So-called domain adaptation algorithms formalize this strategy and have indeed been shown to significantly reduce the amount of required training data for intact subjects for myoelectric movements classification. It is not clear, however, whether these results extend also to amputees and, if so, whether prior information from amputees and intact subjects is equally useful. To overcome this problem, we evaluated several domain adaptation algorithms on data coming from both amputees and intact subjects. Our findings indicate that: (1) the use of previous experience from other subjects allows us to reduce the training time by about an order of magnitude; (2) this improvement holds regardless of whether an amputee exploits previous information from other amputees or from intact subjects.', 'url': 'http://arxiv.org/abs/1608.07536', 'sec_subject': 'cs.LG', 'authors': ['Valentina Gregori', 'Barbara Caputo']}
+2016-08-30 01:09:16 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07502> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-30 01:09:16 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07502>
+{'title': '[1608.07502] Entity Embedding-based Anomaly Detection for Heterogeneous Categorical Events', 'num': 2, 'order_index': 8312, 'abstract': 'Anomaly detection plays an important role in modern data-driven security applications, such as detecting suspicious access to a socket from a process. In many cases, such events can be described as a collection of categorical values that are considered as entities of different types, which we call heterogeneous categorical events. Due to the lack of intrinsic distance measures among entities, and the exponentially large event space, most existing work relies heavily on heuristics to calculate abnormal scores for events. Different from previous work, we propose a principled and unified probabilistic model APE (Anomaly detection via Probabilistic pairwise interaction and Entity embedding) that directly models the likelihood of events. In this model, we embed entities into a common latent space using their observed co-occurrence in different events. More specifically, we first model the compatibility of each pair of entities according to their embeddings. Then we utilize the weighted pairwise interactions of different entity types to define the event probability. Using Noise-Contrastive Estimation with "context-dependent" noise distribution, our model can be learned efficiently regardless of the large event space. Experimental results on real enterprise surveillance data show that our methods can accurately detect abnormal events compared to other state-of-the-art abnormal detection techniques.', 'url': 'http://arxiv.org/abs/1608.07502', 'sec_subject': 'cs.LG', 'authors': ['Ting Chen', 'Lu-An Tang', 'Yizhou Sun', 'Zhengzhang Chen', 'Kai Zhang']}
+2016-08-30 01:09:19 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07328> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-30 01:09:19 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07328>
+{'title': '[1608.07328] Fundamental Limits of Budget-Fidelity Trade-off in Label Crowdsourcing', 'num': 4, 'order_index': 8314, 'abstract': 'Digital crowdsourcing (CS) is a modern approach to perform certain large projects using small contributions of a large crowd. In CS, a taskmaster typically breaks down the project into small batches of tasks and assigns them to so-called workers with imperfect skill levels. The crowdsourcer then collects and analyzes the results for inference and serving the purpose of the project. In this work, the CS problem, as a human-in-the-loop computation problem, is modeled and analyzed in an information theoretic rate-distortion framework. The purpose is to identify the ultimate fidelity that one can achieve by any form of query from the crowd and any decoding (inference) algorithm with a given budget. The results are established by a joint source channel (de)coding scheme, which represent the query scheme and inference, over parallel noisy channels, which model workers with imperfect skill levels. We also present and analyze a query scheme dubbed $k$-ary incidence coding and study optimized query pricing in this setting.', 'url': 'http://arxiv.org/abs/1608.07328', 'sec_subject': 'cs.LG', 'authors': ['Farshad Lahouti', 'Babak Hassibi']}
+2016-08-30 01:09:47 [scrapy] INFO: Crawled 11 pages (at 11 pages/min), scraped 9 items (at 9 items/min)
+2016-08-30 01:09:51 [scrapy] DEBUG: Crawled (200) <GET https://arxiv.org/list/cs.LG/recent> (referer: None)
+2016-08-30 01:09:51 [scrapy] DEBUG: Filtered duplicate request: <GET http://arxiv.org/abs/1608.07536> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2016-08-30 01:10:47 [scrapy] INFO: Crawled 12 pages (at 1 pages/min), scraped 9 items (at 0 items/min)
+2016-08-30 01:11:47 [scrapy] INFO: Crawled 12 pages (at 0 pages/min), scraped 9 items (at 0 items/min)
+2016-08-30 01:12:05 [scrapy] DEBUG: Retrying <GET http://arxiv.org/abs/1608.07115> (failed 1 times): User timeout caused connection failure: Getting http://arxiv.org/abs/1608.07115 took longer than 180.0 seconds..
+2016-08-30 01:12:11 [scrapy] DEBUG: Retrying <GET http://arxiv.org/abs/1603.05953> (failed 1 times): User timeout caused connection failure: Getting http://arxiv.org/abs/1603.05953 took longer than 180.0 seconds..
+2016-08-30 01:12:11 [scrapy] DEBUG: Retrying <GET http://arxiv.org/abs/1608.07310> (failed 1 times): User timeout caused connection failure: Getting http://arxiv.org/abs/1608.07310 took longer than 180.0 seconds..
+2016-08-30 01:12:13 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1608.07115> (referer: https://arxiv.org/list/cs.CL/recent)
+2016-08-30 01:12:13 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1608.07115>
+{'title': '[1608.07115] Aligning Packed Dependency Trees: a theory of composition for distributional semantics', 'num': 1, 'order_index': 7461, 'abstract': 'We present a new framework for compositional distributional semantics in which the distributional contexts of lexemes are expressed in terms of anchored packed dependency trees. We show that these structures have the potential to capture the full sentential contexts of a lexeme and provide a uniform basis for the composition of distributional knowledge in a way that captures both mutual disambiguation and generalization.', 'url': 'http://arxiv.org/abs/1608.07115', 'sec_subject': 'cs.CL', 'authors': ['David Weir', 'Julie Weeds', 'Jeremy Reffin', 'Thomas Kober']}
+2016-08-30 01:12:16 [scrapy] DEBUG: Crawled (200) <GET http://arxiv.org/abs/1603.05953> (referer: https://arxiv.org/list/cs.LG/recent)
+2016-08-30 01:12:16 [scrapy] DEBUG: Scraped from <200 http://arxiv.org/abs/1603.05953>
+{'title': '[1603.05953] Katyusha: The First Direct Acceleration of Stochastic Gradient Methods', 'num': 7, 'order_index': 8317, 'abstract': 'The main ingredient behind our result is $\\textit{Katyusha momentum}$, a novel "negative momentum on top of momentum" that can be incorporated into a variance-reduction based algorithm and speed it up. As a result, since variance reduction has been successfully applied to a fast growing list of practical problems, our paper suggests that in each of such cases, one had better hurry up and give Katyusha a hug.', 'url': 'http://arxiv.org/abs/1603.05953', 'sec_subject': 'cs.LG', 'authors': ['Zeyuan Allen-Zhu']}
+2016-08-30 01:12:47 [scrapy] INFO: Crawled 14 pages (at 2 pages/min), scraped 11 items (at 2 items/min)
+2016-08-30 01:13:47 [scrapy] INFO: Crawled 14 pages (at 0 pages/min), scraped 11 items (at 0 items/min)
+2016-08-30 01:14:47 [scrapy] INFO: Crawled 14 pages (at 0 pages/min), scraped 11 items (at 0 items/min)
+2016-08-30 01:15:11 [scrapy] DEBUG: Retrying <GET http://arxiv.org/abs/1608.07310> (failed 2 times): User timeout caused connection failure: Getting http://arxiv.org/abs/1608.07310 took longer than 180.0 seconds..
+2016-08-30 01:15:47 [scrapy] INFO: Crawled 14 pages (at 0 pages/min), scraped 11 items (at 0 items/min)
+2016-08-30 01:16:47 [scrapy] INFO: Crawled 14 pages (at 0 pages/min), scraped 11 items (at 0 items/min)
+2016-08-30 05:01:49 [scrapy] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2016-08-30 05:01:49 [scrapy] INFO: Closing spider (shutdown)
+2016-08-30 05:01:49 [scrapy] INFO: Crawled 14 pages (at 0 pages/min), scraped 11 items (at 0 items/min)
+2016-08-30 05:01:49 [scrapy] DEBUG: Retrying <GET http://arxiv.org/abs/1608.07310> (failed 3 times): User timeout caused connection failure: Getting http://arxiv.org/abs/1608.07310 took longer than 180.0 seconds..
+2016-08-30 05:01:49 [scrapy] ERROR: Scraper close failure
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/core/downloader/middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/twisted/internet/defer.py", line 588, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/scrapy/core/downloader/handlers/http11.py", line 305, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting http://arxiv.org/abs/1608.07310 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cai/anaconda3/lib/python3.5/site-packages/twisted/internet/defer.py", line 588, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/cai/sandbox/axspider/axspider/pipelines.py", line 91, in close_spider
+    print(sortedkeys)
+OSError: [Errno 5] Input/output error
+2016-08-30 05:01:49 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 6789,
+ 'downloader/request_count': 19,
+ 'downloader/request_method_count/GET': 19,
+ 'downloader/response_bytes': 64635,
+ 'downloader/response_count': 14,
+ 'downloader/response_status_count/200': 14,
+ 'dupefilter/filtered': 7,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2016, 8, 29, 21, 1, 49, 366206),
+ 'item_scraped_count': 11,
+ 'log_count/DEBUG': 31,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 17,
+ 'request_depth_max': 1,
+ 'response_received_count': 14,
+ 'scheduler/dequeued': 19,
+ 'scheduler/dequeued/memory': 19,
+ 'scheduler/enqueued': 20,
+ 'scheduler/enqueued/memory': 20,
+ 'start_time': datetime.datetime(2016, 8, 29, 17, 8, 47, 667954)}
+2016-08-30 05:01:49 [scrapy] INFO: Spider closed (shutdown)

@@ -4,8 +4,9 @@ class axspider(scrapy.Spider):
 	name = 'axspider'
 	allowed_domains = ['arxiv.org']
 	start_urls = [
-				'http://arxiv.org/list/cs.CL/recent',
-				'https://arxiv.org/list/cs.LG/recent'
+				'https://arxiv.org/list/cs.CL/recent',
+				'https://arxiv.org/list/cs.LG/recent',
+				'https://arxiv.org/list/cs.CV/recent'
 				]
 
 	def __init__(self):
@@ -49,8 +50,10 @@ class axspider(scrapy.Spider):
 		#according to the source code of the page, it will return a list
 		abs_list = response.xpath("//blockquote[@class='abstract mathjax']/text()").extract()
 		for i in abs_list:
+			i = i.strip()
 			if len(i) > 0:
 				abstract = i
+				break
 		abstract = abstract.replace("\n", " ").strip()
 
 		yield {
