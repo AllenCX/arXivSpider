@@ -4,9 +4,12 @@ class axspider(scrapy.Spider):
 	name = 'axspider'
 	allowed_domains = ['arxiv.org']
 	start_urls = [
-				'https://arxiv.org/list/cs.CL/recent',
-				'https://arxiv.org/list/cs.LG/recent',
-				'https://arxiv.org/list/cs.CV/recent'
+				#'https://arxiv.org/list/cs.CL/recent',
+				#'https://arxiv.org/list/cs.LG/recent',
+				#'https://arxiv.org/list/cs.CV/recent',
+				'http://arxiv.org/list/cs.CL/pastweek?skip=0&show=50',
+				'http://arxiv.org/list/cs.LG/pastweek?skip=0&show=50',
+				'http://arxiv.org/list/cs.CV/pastweek?skip=0&show=50',
 				]
 
 	def __init__(self):
@@ -38,7 +41,7 @@ class axspider(scrapy.Spider):
 		#print(response.url)
 		#print("="*10)
 		article_url = response.url
-
+		print("processing " + article_url)
 		title = response.xpath("//title/text()").extract()[0]
 		title = " ".join(title.split())
 		

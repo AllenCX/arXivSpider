@@ -28,7 +28,7 @@ class AxspiderPipeline(object):
 	def assemble_msg(self, item):
 		'''
 		input:
-			content: the item fetched by the spider, see axspider.py
+			item: the item fetched by the spider, see axspider.py
 
 		return:
 			string, the email's body content.
@@ -69,7 +69,6 @@ class AxspiderPipeline(object):
 		if tmp_dict["sec_subject"] not in self.sec_subject_list:
 			self.sec_subject_list.append(tmp_dict["sec_subject"])
 
-		print(order_index)
 		self.msg_dict[order_index] = self.assemble_msg(item)
 		line = line.encode()
 		self.file.write(line)
@@ -88,12 +87,14 @@ class AxspiderPipeline(object):
 		sortedkeys = sorted(self.msg_dict.keys())
 		for i in sortedkeys:
 			self.msg +=  self.msg_dict[i]
+		self.msg += "<br>{0}".format(time.strftime("%Y-%m-%d %H:%M", time.localtime()))
 		print(sortedkeys)
 		send_mail(self.to_list, self.subject, self.msg, 'html')
 
 		print("="*80)
 		print("Now the spider ends!")
 		print(sortedkeys)
+		print(time.strftime("%Y-%m-%d %H:%M", time.localtime()))
 		print("="*80)
 		#self.mailer.send(to=self.TO, subject=self.subject, body=self.body)
 		self.file.close()
